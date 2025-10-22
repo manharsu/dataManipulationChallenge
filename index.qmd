@@ -1239,7 +1239,7 @@ plt.style.use('default')
 # Plot 1: On-time delivery rate by category (Top Left)
 ax1 = fig.add_subplot(gs[0, 0])
 bars1 = ax1.bar(category_service.index, category_service['on_time_rate'], 
-                color=colors, alpha=0.8, edgecolor='black', linewidth=1)
+                 color=colors, alpha=0.8, edgecolor='black', linewidth=1)
 ax1.set_title('On-Time Delivery Rate by Category', fontsize=12, fontweight='bold', pad=15)
 ax1.set_ylabel('On-Time Rate (%)', fontweight='bold')
 ax1.set_ylim(75, 100)
@@ -1253,7 +1253,7 @@ for bar, value in zip(bars1, category_service['on_time_rate']):
 # Plot 2: Average days late by category (Top Center)
 ax2 = fig.add_subplot(gs[0, 1])
 bars2 = ax2.bar(category_service.index, category_service['avg_days_late'],
-                color=colors, alpha=0.8, edgecolor='black', linewidth=1)
+                 color=colors, alpha=0.8, edgecolor='black', linewidth=1)
 ax2.set_title('Average Days Late by Category', fontsize=12, fontweight='bold', pad=15)
 ax2.set_ylabel('Average Days Late', fontweight='bold')
 ax2.grid(axis='y', alpha=0.3, linestyle='--')
@@ -1267,8 +1267,9 @@ for bar, value in zip(bars2, category_service['avg_days_late']):
 ax3 = fig.add_subplot(gs[0, 2])
 late_by_category = shipments_with_category[shipments_with_category['is_late'] == True]
 category_late_counts = late_by_category['prodCategory'].value_counts()
-wedges, texts, autotexts = ax3.pie(category_late_counts.values, labels=category_late_counts.index, 
-                                  colors=colors, autopct='%1.1f%%', startangle=90)
+wedges, texts, autotexts = ax3.pie(category_late_counts.values, 
+                                    labels=category_late_counts.index, 
+                                    colors=colors, autopct='%1.1f%%', startangle=90)
 ax3.set_title('Distribution of Late Shipments\nAcross Categories', fontsize=12, fontweight='bold', pad=15)
 
 # Plot 4: Multi-category vs Single-category performance (Bottom Left)
@@ -1294,7 +1295,7 @@ monthly_service = shipments_with_category.groupby('month')['is_late'].mean()
 monthly_on_time = (1 - monthly_service) * 100
 
 ax5.plot(range(len(monthly_on_time)), monthly_on_time.values, 
-         marker='o', linewidth=2, markersize=6, color='#2E8B57')
+          marker='o', linewidth=2, markersize=6, color='#2E8B57')
 ax5.set_title('Monthly On-Time Delivery Trend', fontsize=12, fontweight='bold', pad=15)
 ax5.set_ylabel('On-Time Rate (%)', fontweight='bold')
 ax5.set_xlabel('Month', fontweight='bold')
@@ -1328,8 +1329,8 @@ Operational Insights:
 """
 
 ax6.text(0.05, 0.95, summary_text, transform=ax6.transAxes, fontsize=10,
-         verticalalignment='top', fontfamily='monospace',
-         bbox=dict(boxstyle="round,pad=0.5", facecolor='lightgray', alpha=0.8))
+          verticalalignment='top', fontfamily='monospace',
+          bbox=dict(boxstyle="round,pad=0.5", facecolor='lightgray', alpha=0.8))
 
 plt.tight_layout()
 plt.show()
