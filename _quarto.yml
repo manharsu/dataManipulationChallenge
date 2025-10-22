@@ -1,0 +1,6 @@
+project:
+  type: default
+
+execute:
+  python: "venv/Scripts/python.exe"
+  kernel: "ayesha-quarto-portfolio"
