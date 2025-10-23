@@ -366,7 +366,7 @@ First few rows of product line data:
 <blockquote>
 <p>Replace this with your answers to the discussion questions</p>
 </blockquote>
-<div id="543bacd5" class="cell" data-execution_count="3">
+<div id="9be89591" class="cell" data-execution_count="3">
 <div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple assignment - calculate if shipment was late</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shipments_df[<span class="st">&#39;actualShipDate&#39;</span>].dtype)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -379,7 +379,7 @@ First few rows of product line data:
 <p>String comparison: “04-11-2025” vs “05-20-2024” → False (wrong)</p>
 <p>Date comparison: April 11, 2025 vs May 20, 2024 → True (correct)</p>
 <p>3.Debug This Code Answer: The error occurs because shipments_df[‘is_late’] doesn’t exist in the original dataframe - it’s being created in the same assign() call. The fix is to use the lambda approach:</p>
-<div id="860f82f1" class="cell" data-execution_count="4">
+<div id="957130f2" class="cell" data-execution_count="4">
 <div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>shipments_with_lateness <span class="op">=</span> (</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    shipments_df</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    .assign(</span>
@@ -565,7 +565,7 @@ Late shipments sample:
 </div>
 </div>
 <p>Boolean indexing breaks the flow:</p>
-<div id="e1a84a6e" class="cell" data-execution_count="7">
+<div id="e86e7544" class="cell" data-execution_count="7">
 <div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boolean indexing - more cluttered</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>(shipments_with_lateness[shipments_with_lateness[<span class="st">&#39;is_late&#39;</span>] <span class="op">==</span> <span class="va">True</span>]</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">filter</span>([<span class="st">&#39;shipID&#39;</span>, <span class="st">&#39;partID&#39;</span>, <span class="st">&#39;days_late&#39;</span>])</span>
@@ -672,7 +672,7 @@ Late shipments sample:
 <ol start="3" type="1">
 <li>Using .query() with variables: 5 days late:</li>
 </ol>
-<div id="7bece8cd" class="cell" data-execution_count="8">
+<div id="a2677b93" class="cell" data-execution_count="8">
 <div class="sourceCode" id="cb13"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define threshold</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>late_threshold <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -696,7 +696,7 @@ Late shipments sample:
 </div>
 </div>
 <p>Using boolean indexing with variables:</p>
-<div id="ae73e642" class="cell" data-execution_count="9">
+<div id="b48e4299" class="cell" data-execution_count="9">
 <div class="sourceCode" id="cb15"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define threshold</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>late_threshold <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -721,7 +721,7 @@ Late shipments sample:
 </div>
 </div>
 <p>Multiple thresholds example:</p>
-<div id="0aaefd68" class="cell" data-execution_count="10">
+<div id="c891cfa7" class="cell" data-execution_count="10">
 <div class="sourceCode" id="cb17"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple threshold variables</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>min_days_late <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>max_days_late <span class="op">=</span> <span class="dv">15</span></span>
@@ -782,7 +782,7 @@ Remaining columns: [&#39;shipID&#39;, &#39;plannedShipDate&#39;, &#39;actualShip
 </ol>
 <p>Question 1: Drop vs Filter Strategies</p>
 <p>.drop(columns=[‘quantity’]) Removes only the specified columns Keeps all other columns Use when you want to remove a few specific columns from many .filter([‘col1’, ‘col2’]) Keeps only the columns you list Removes all other columns Use when you want to keep only a specific subset of columns</p>
-<div id="6e6eb8af" class="cell" data-execution_count="12">
+<div id="352d9d02" class="cell" data-execution_count="12">
 <div class="sourceCode" id="cb21"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These are equivalent for column selection:</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>method1 <span class="op">=</span> shipments_df.drop(columns<span class="op">=</span>[<span class="st">&#39;quantity&#39;</span>])  <span class="co"># Explicit removal</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>method2 <span class="op">=</span> shipments_df.<span class="bu">filter</span>([<span class="st">&#39;shipID&#39;</span>, <span class="st">&#39;plannedShipDate&#39;</span>, <span class="st">&#39;actualShipDate&#39;</span>, <span class="st">&#39;partID&#39;</span>])  <span class="co"># Explicit inclusion</span></span>
@@ -805,7 +805,7 @@ Remaining columns: [&#39;shipID&#39;, &#39;plannedShipDate&#39;, &#39;actualShip
 <p>Don’t care if optional columns are missing</p>
 <p>Preserve more data for analysis</p>
 <p>Avoid deleting useful information</p>
-<div id="6a389bf5" class="cell" data-execution_count="13">
+<div id="c2ac76ba" class="cell" data-execution_count="13">
 <div class="sourceCode" id="cb23"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Without subset - drops rows with ANY missing values</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>dropped_any_na <span class="op">=</span> shipments_df.dropna()</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Rows after dropping any NA: </span><span class="sc">{</span><span class="bu">len</span>(dropped_any_na)<span class="sc">}</span><span class="ss">&quot;</span>)</span>
@@ -876,7 +876,7 @@ Rows after dropping date NAs: 4000</code></pre>
 <p>Sorts from highest to lowest</p>
 <p>Z-A, 9-0, latest to earliest dates</p>
 <p>Example: [7, 5, 3, 1]</p>
-<div id="5403c63b" class="cell" data-execution_count="15">
+<div id="f3590241" class="cell" data-execution_count="15">
 <div class="sourceCode" id="cb27"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Worst lateness first (highest days_late at top)</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>shipments_with_lateness.sort_values(<span class="st">&#39;days_late&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1042,7 +1042,7 @@ Rows after dropping date NAs: 4000</code></pre>
 </div>
 </div>
 <p>1 b.</p>
-<div id="b8010706" class="cell" data-execution_count="16">
+<div id="11f52cd2" class="cell" data-execution_count="16">
 <div class="sourceCode" id="cb28"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by multiple columns</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>sorted_df <span class="op">=</span> shipments_with_lateness.sort_values(</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&#39;is_late&#39;</span>, <span class="st">&#39;days_late&#39;</span>], </span>
@@ -1079,7 +1079,7 @@ Rows after dropping date NAs: 4000</code></pre>
 <p>Why we need it: After sorting, the original index gets messed up:</p>
 <p>Index might be: [45, 12, 8, 33, 1…] (random order)</p>
 <p>After reset: [0, 1, 2, 3, 4…] (clean order)</p>
-<div id="f09b0fee" class="cell" data-execution_count="17">
+<div id="405eaabd" class="cell" data-execution_count="17">
 <div class="sourceCode" id="cb30"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Without reset_index - messy index</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>sorted_messy <span class="op">=</span> shipments_with_lateness.sort_values(<span class="st">&#39;days_late&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_messy.index)  <span class="co"># [776, 777, 778, 779, 780...]</span></span>
@@ -1105,7 +1105,7 @@ RangeIndex(start=0, stop=4000, step=1)</code></pre>
 <p>Example: Row that was at index 5 might move to index 150 after sorting</p>
 <p>Why this is problematic:</p>
 <p>Confusing row references:</p>
-<p>::: {#92c0adbf .cell execution_count=18} <code>{.python .cell-code}  # After sorting, index 0 might not be the first original row  sorted_df.iloc[0] # This might have been row 45 in original data</code></p>
+<p>::: {#910dc954 .cell execution_count=18} <code>{.python .cell-code}  # After sorting, index 0 might not be the first original row  sorted_df.iloc[0] # This might have been row 45 in original data</code></p>
 <p>::: {.cell-output .cell-output-display execution_count=18} <code>shipID                             10217  plannedShipDate      2013-09-23 00:00:00  actualShipDate       2013-10-14 00:00:00  partID                       part2081be9  quantity                               5  is_late                             True  days_late                             21  lateStatement      Darn Shipment is Late  Name: 1144, dtype: object</code> ::: :::</p>
 <p>Broken relationships:</p>
 <p>If you had external references to row indexes, they’re now wrong</p>
@@ -1168,7 +1168,7 @@ On-time delivery rate: 88.6%</code></pre>
 <p>What sum() counts:</p>
 <p>It counts how many True values (1’s) are in the boolean series</p>
 <p>Each True = 1, each False = 0</p>
-<div id="e77425b0" class="cell" data-execution_count="20">
+<div id="769ddc7e" class="cell" data-execution_count="20">
 <div class="sourceCode" id="cb34"><pre class="sourceCode python cell-code"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First create clean_shipments (from earlier cells)</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>clean_shipments <span class="op">=</span> (</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    shipments_with_lateness</span>
@@ -1331,10 +1331,10 @@ SpareParts      True   767  137  0.179    -1.003  21</code></pre>
 <p>1 b.</p>
 <p>Why we need .agg() after grouping:</p>
 <p>Without .agg(): The grouped data is incomplete and unusable - it’s just split into groups but no calculations are performed.</p>
-<p>::: {#ad45d146 .cell execution_count=23} <code>{.python .cell-code}  # This creates a DataFrameGroupBy object, not useful results  grouped= shipments_with_category.groupby('prodCategory')  print(type(grouped)) # &lt;class 'pandas.core.groupby.generic.DataFrameGroupBy'&gt;  print(grouped)       # Can't see the actual data</code></p>
-<p>::: {.cell-output .cell-output-stdout} <code>&lt;class 'pandas.core.groupby.generic.DataFrameGroupBy'&gt;  &lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x00000241846BD190&gt;</code> ::: :::</p>
+<p>::: {#c8b5f7fc .cell execution_count=23} <code>{.python .cell-code}  # This creates a DataFrameGroupBy object, not useful results  grouped= shipments_with_category.groupby('prodCategory')  print(type(grouped)) # &lt;class 'pandas.core.groupby.generic.DataFrameGroupBy'&gt;  print(grouped)       # Can't see the actual data</code></p>
+<p>::: {.cell-output .cell-output-stdout} <code>&lt;class 'pandas.core.groupby.generic.DataFrameGroupBy'&gt;  &lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000018FE64ED6A0&gt;</code> ::: :::</p>
 <p>What .agg() does: It applies calculations to each group and combines the results:</p>
-<p>::: {#97c969cb .cell execution_count=24} ``` {.python .cell-code} # Without .agg() - useless grouped_data= shipments_with_category.groupby(‘prodCategory’) #Can’t see or use this meaningfully</p>
+<p>::: {#ad195784 .cell execution_count=24} ``` {.python .cell-code} # Without .agg() - useless grouped_data= shipments_with_category.groupby(‘prodCategory’) #Can’t see or use this meaningfully</p>
 <p>#With .agg() - useful results results= shipments_with_category.groupby(‘prodCategory’).agg({ ‘is_late’: ‘mean’, ‘days_late’: ‘max’ }) #Gets: average lateness and max days late FOR EACH CATEGORY ``` :::</p>
 <p>What happens if you don’t use .agg(): You get a GroupBy object, not a DataFrame</p>
 <p>No calculations are performed</p>
@@ -1349,12 +1349,12 @@ SpareParts      True   767  137  0.179    -1.003  21</code></pre>
 <p>Looks at individual line items</p>
 <p>Doesn’t care which shipment they belong to</p>
 <p>Example: “4% of Liquids line items are late”</p>
-<p>::: {#7d9c57eb .cell execution_count=25} <code>{.python .cell-code}  service_by_category = (     shipments_with_category     .groupby('prodCategory')     .agg({'is_late': 'mean'})  )</code> :::</p>
+<p>::: {#c4148691 .cell execution_count=25} <code>{.python .cell-code}  service_by_category = (     shipments_with_category     .groupby('prodCategory')     .agg({'is_late': 'mean'})  )</code> :::</p>
 <p>Grouping by [‘shipID’, ‘prodCategory’]: Answers: “For shipments containing multiple categories, how does lateness vary between categories within the same shipment?”</p>
 <p>Looks at shipment-category combinations</p>
 <p>Recognizes that one shipment can have items from multiple categories</p>
 <p>Example: “In shipment 10192, were the Machines items late but the Liquids on time?”</p>
-<p>::: {#af31ee67 .cell execution_count=26} ``` {.python .cell-code} shipment_category_analysis= ( shipments_with_category .groupby([‘shipID’, ‘prodCategory’]) .agg({‘is_late’: ‘any’}) # Was ANY item in this shipment-category combo late? )</p>
+<p>::: {#77c010e5 .cell execution_count=26} ``` {.python .cell-code} shipment_category_analysis= ( shipments_with_category .groupby([‘shipID’, ‘prodCategory’]) .agg({‘is_late’: ‘any’}) # Was ANY item in this shipment-category combo late? )</p>
 <pre><code>:::
 
 
@@ -1493,104 +1493,29 @@ Percentage with multiple categories: 23.3%</code></pre>
 <section id="professional-visualizations-for-100-grade" class="level3">
 <h3>Professional Visualizations (For 100% Grade)</h3>
 <p><strong>Your Task:</strong> Create a professional visualization that supports your analysis and demonstrates your understanding of the data.</p>
-<p>import matplotlib.pyplot as plt import seaborn as sns</p>
+<div id="cell-professional-visualization" class="cell" data-message="false" data-execution_count="28">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img src="index_files/figure-html/professional-visualization-output-1.png" id="professional-visualization" width="1520" height="1142" /></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+============================================================
+KEY BUSINESS INSIGHTS
+============================================================
+• Best performing category: Liquids (95.9% on-time)
+• Worst performing category: Machines &amp; SpareParts (82.0% on-time)
+• Multi-category orders: 23.3% of shipments
+• Overall service level: 88.6% on-time delivery</code></pre>
+</div>
+</div>
 </section>
 </section>
-</section>
-<section id="first-ensure-we-have-all-required-data-by-recreating-the-necessary-variables" class="level1">
-<h1>First, ensure we have all required data by recreating the necessary variables</h1>
-</section>
-<section id="load-data-if-not-already-loaded" class="level1">
-<h1>Load data if not already loaded</h1>
-<p>if ‘shipments_df’ not in globals(): shipments_df = pd.read_csv( “https://raw.githubusercontent.com/flyaflya/persuasive/main/shipments.csv”, parse_dates=[‘plannedShipDate’, ‘actualShipDate’] ).head(4000)</p>
-<p>if ‘product_line_df’ not in globals(): product_line_df = pd.read_csv( “https://raw.githubusercontent.com/flyaflya/persuasive/main/productLine.csv” )</p>
-</section>
-<section id="create-shipments_with_lateness-if-not-exists" class="level1">
-<h1>Create shipments_with_lateness if not exists</h1>
-<p>if ‘shipments_with_lateness’ not in globals(): shipments_with_lateness = ( shipments_df .assign( is_late=lambda df: df[‘actualShipDate’] &gt; df[‘plannedShipDate’], days_late=lambda df: (df[‘actualShipDate’] - df[‘plannedShipDate’]).dt.days ) )</p>
-</section>
-<section id="create-clean_shipments-if-not-exists" class="level1">
-<h1>Create clean_shipments if not exists</h1>
-<p>if ‘clean_shipments’ not in globals(): clean_shipments = ( shipments_with_lateness .drop(columns=[‘quantity’]) .dropna(subset=[‘plannedShipDate’, ‘actualShipDate’]) )</p>
-</section>
-<section id="create-shipments_with_category-if-not-exists" class="level1">
-<h1>Create shipments_with_category if not exists</h1>
-<p>if ‘shipments_with_category’ not in globals(): shipments_with_category = ( clean_shipments .merge(product_line_df, on=‘partID’, how=‘left’) .assign( category_late=lambda df: df[‘is_late’] &amp; df[‘prodCategory’].notna() ) )</p>
-</section>
-<section id="create-comprehensive_analysis-if-not-exists" class="level1">
-<h1>Create comprehensive_analysis if not exists</h1>
-<p>if ‘comprehensive_analysis’ not in globals(): comprehensive_analysis = ( shipments_with_category .groupby([‘shipID’, ‘prodCategory’]) .agg({ ‘is_late’: ‘any’, ‘days_late’: ‘max’ }) .reset_index() .assign( has_multiple_categories=lambda df: df.groupby(‘shipID’)[‘prodCategory’].transform(‘nunique’) &gt; 1 ) )</p>
-</section>
-<section id="create-multi_category_shipments-if-not-exists" class="level1">
-<h1>Create multi_category_shipments if not exists</h1>
-<p>if ‘multi_category_shipments’ not in globals(): multi_category_shipments = comprehensive_analysis[comprehensive_analysis[‘has_multiple_categories’]]</p>
-</section>
-<section id="calculate-overall-on-time-rate-if-not-exists" class="level1">
-<h1>Calculate overall on-time rate if not exists</h1>
-<p>if ‘on_time_rate’ not in globals(): on_time_rate = (1 - clean_shipments[‘is_late’].mean()) * 100</p>
-</section>
-<section id="calculate-service-level-metrics-by-category" class="level1">
-<h1>Calculate service level metrics by category</h1>
-<p>category_service = ( shipments_with_category .groupby(‘prodCategory’) .agg({ ‘is_late’: [‘count’, ‘sum’, ‘mean’], ‘days_late’: ‘mean’ }) .round(3) ) category_service.columns = [‘total_shipments’, ‘late_count’, ‘late_rate’, ‘avg_days_late’] category_service[‘on_time_rate’] = (1 - category_service[‘late_rate’]) * 100</p>
-</section>
-<section id="create-comprehensive-professional-visualization-demonstrating-data-understanding" class="level1">
-<h1>Create comprehensive professional visualization demonstrating data understanding</h1>
-<p>fig = plt.figure(figsize=(16, 12)) gs = fig.add_gridspec(2, 3, height_ratios=[1, 1], width_ratios=[1, 1, 1])</p>
-</section>
-<section id="professional-color-palette" class="level1">
-<h1>Professional color palette</h1>
-<p>colors = [‘#2E8B57’, ‘#4682B4’, ‘#DAA520’, ‘#CD5C5C’] # Green, Blue, Gold, Red plt.style.use(‘default’)</p>
-</section>
-<section id="plot-1-on-time-delivery-rate-by-category-top-left" class="level1">
-<h1>Plot 1: On-time delivery rate by category (Top Left)</h1>
-<p>ax1 = fig.add_subplot(gs[0, 0]) bars1 = ax1.bar(category_service.index, category_service[‘on_time_rate’], color=colors, alpha=0.8, edgecolor=‘black’, linewidth=1) ax1.set_title(‘On-Time Delivery Rate by Category’, fontsize=12, fontweight=‘bold’, pad=15) ax1.set_ylabel(‘On-Time Rate (%)’, fontweight=‘bold’) ax1.set_ylim(75, 100) ax1.grid(axis=‘y’, alpha=0.3, linestyle=‘–’)</p>
-</section>
-<section id="add-value-labels" class="level1">
-<h1>Add value labels</h1>
-<p>for bar, value in zip(bars1, category_service[‘on_time_rate’]): ax1.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.3, f’{value:.1f}%‘, ha=’center’, va=‘bottom’, fontweight=‘bold’, fontsize=10)</p>
-</section>
-<section id="plot-2-average-days-late-by-category-top-center" class="level1">
-<h1>Plot 2: Average days late by category (Top Center)</h1>
-<p>ax2 = fig.add_subplot(gs[0, 1]) bars2 = ax2.bar(category_service.index, category_service[‘avg_days_late’], color=colors, alpha=0.8, edgecolor=‘black’, linewidth=1) ax2.set_title(‘Average Days Late by Category’, fontsize=12, fontweight=‘bold’, pad=15) ax2.set_ylabel(‘Average Days Late’, fontweight=‘bold’) ax2.grid(axis=‘y’, alpha=0.3, linestyle=‘–’)</p>
-</section>
-<section id="add-value-labels-1" class="level1">
-<h1>Add value labels</h1>
-<p>for bar, value in zip(bars2, category_service[‘avg_days_late’]): ax2.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.05, f’{value:.2f}‘, ha=’center’, va=‘bottom’, fontweight=‘bold’, fontsize=10)</p>
-</section>
-<section id="plot-3-late-shipment-distribution-top-right" class="level1">
-<h1>Plot 3: Late shipment distribution (Top Right)</h1>
-<p>ax3 = fig.add_subplot(gs[0, 2]) late_by_category = shipments_with_category[shipments_with_category[‘is_late’] == True] category_late_counts = late_by_category[‘prodCategory’].value_counts() wedges, texts, autotexts = ax3.pie(category_late_counts.values, labels=category_late_counts.index, colors=colors, autopct=‘%1.1f%%’, startangle=90) ax3.set_title(‘Distribution of Late ShipmentsCategories’, fontsize=12, fontweight=‘bold’, pad=15)</p>
-</section>
-<section id="plot-4-multi-category-vs-single-category-performance-bottom-left" class="level1">
-<h1>Plot 4: Multi-category vs Single-category performance (Bottom Left)</h1>
-<p>ax4 = fig.add_subplot(gs[1, 0]) multi_cat_performance = comprehensive_analysis.groupby(‘has_multiple_categories’)[‘is_late’].mean() labels = [‘Single Category’, ‘Multi Category’] values = [multi_cat_performance[False] * 100, multi_cat_performance[True] * 100] bars4 = ax4.bar(labels, values, color=[‘#4682B4’, ‘#CD5C5C’], alpha=0.8, edgecolor=‘black’) ax4.set_title(‘Late Rate: Single vs Multi-Category Orders’, fontsize=12, fontweight=‘bold’, pad=15) ax4.set_ylabel(‘Late Rate (%)’, fontweight=‘bold’) ax4.set_ylim(0, max(values) * 1.1)</p>
-</section>
-<section id="add-value-labels-2" class="level1">
-<h1>Add value labels</h1>
-<p>for bar, value in zip(bars4, values): ax4.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5, f’{value:.1f}%‘, ha=’center’, va=‘bottom’, fontweight=‘bold’, fontsize=10)</p>
-</section>
-<section id="plot-5-service-level-timeline-bottom-center" class="level1">
-<h1>Plot 5: Service level timeline (Bottom Center)</h1>
-<p>ax5 = fig.add_subplot(gs[1, 1]) # Create monthly service level data shipments_with_category[‘month’] = shipments_with_category[‘actualShipDate’].dt.to_period(‘M’) monthly_service = shipments_with_category.groupby(‘month’)[‘is_late’].mean() monthly_on_time = (1 - monthly_service) * 100</p>
-<p>ax5.plot(range(len(monthly_on_time)), monthly_on_time.values, marker=‘o’, linewidth=2, markersize=6, color=‘#2E8B57’) ax5.set_title(‘Monthly On-Time Delivery Trend’, fontsize=12, fontweight=‘bold’, pad=15) ax5.set_ylabel(‘On-Time Rate (%)’, fontweight=‘bold’) ax5.set_xlabel(‘Month’, fontweight=‘bold’) ax5.grid(True, alpha=0.3) ax5.set_ylim(80, 100)</p>
-</section>
-<section id="plot-6-key-metrics-summary-bottom-right" class="level1">
-<h1>Plot 6: Key metrics summary (Bottom Right)</h1>
-<p>ax6 = fig.add_subplot(gs[1, 2]) ax6.axis(‘off’)</p>
-</section>
-<section id="create-summary-text" class="level1">
-<h1>Create summary text</h1>
-<p>summary_text = f”“” KEY BUSINESS METRICS</p>
-<p>Overall Performance: • On-Time Rate: {on_time_rate:.1f}% • Total Shipments: {len(clean_shipments):,}</p>
-<p>Category Performance: • Best: Liquids ({category_service.loc[‘Liquids’, ‘on_time_rate’]:.1f}%) • Worst: Machines ({category_service.loc[‘Machines’, ‘on_time_rate’]:.1f}%)</p>
-<p>Multi-Category Orders: • Percentage: {multi_category_shipments[‘shipID’].nunique() / comprehensive_analysis[‘shipID’].nunique() * 100:.1f}% • Count: {multi_category_shipments[‘shipID’].nunique():,} shipments</p>
-<p>Operational Insights: • {category_service.loc[‘Liquids’, ‘total_shipments’]:,} Liquids shipments • {category_service.loc[‘Machines’, ‘total_shipments’]:,} Machines shipments • Average delay: {category_service[‘avg_days_late’].mean():.1f} days ““”</p>
-<p>ax6.text(0.05, 0.95, summary_text, transform=ax6.transAxes, fontsize=10, verticalalignment=‘top’, fontfamily=‘monospace’, bbox=dict(boxstyle=“round,pad=0.5”, facecolor=‘lightgray’, alpha=0.8))</p>
-<p>plt.tight_layout() plt.show()</p>
-</section>
-<section id="print-key-insights" class="level1">
-<h1>Print key insights</h1>
-<p>print(“” + “=”<em>60) print(“KEY BUSINESS INSIGHTS”) print(“=”</em>60) print(f”• Best performing category: Liquids ({category_service.loc[‘Liquids’, ‘on_time_rate’]:.1f}% on-time)“) print(f”• Worst performing category: Machines &amp; SpareParts ({category_service.loc[‘Machines’, ‘on_time_rate’]:.1f}% on-time)“) print(f”• Multi-category orders: {multi_category_shipments[‘shipID’].nunique() / comprehensive_analysis[‘shipID’].nunique() * 100:.1f}% of shipments”) print(f”• Overall service level: {on_time_rate:.1f}% on-time delivery”) print(“Visualization code temporarily commented out for testing”) ``` ## 📊 Professional Visualization Analysis: Service Level Performance by Category</p>
+<section id="professional-visualization-analysis-service-level-performance-by-category" class="level2">
+<h2>📊 Professional Visualization Analysis: Service Level Performance by Category</h2>
 <section id="step-1-data-foundation-and-business-context" class="level3">
 <h3><strong>Step 1: Data Foundation and Business Context</strong></h3>
 <p><strong>Dataset Purpose:</strong> This analysis uses ZappTech’s shipment data to understand service level performance across product categories and identify cross-category ordering patterns.</p>
@@ -1687,6 +1612,7 @@ Percentage with multiple categories: 23.3%</code></pre>
 <li>📅 Use monthly trends for proactive operational adjustments</li>
 </ul>
 <hr />
+</section>
 </section>
 </section>
 <section id="visualization-components" class="level2">

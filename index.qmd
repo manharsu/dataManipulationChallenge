@@ -1343,8 +1343,7 @@ print(f"• Best performing category: Liquids ({category_service.loc['Liquids', 
 print(f"• Worst performing category: Machines & SpareParts ({category_service.loc['Machines', 'on_time_rate']:.1f}% on-time)")
 print(f"• Multi-category orders: {multi_category_shipments['shipID'].nunique() / comprehensive_analysis['shipID'].nunique() * 100:.1f}% of shipments")
 print(f"• Overall service level: {on_time_rate:.1f}% on-time delivery")
-print("Visualization code temporarily commented out for testing")
- ```
+```
 ## 📊 Professional Visualization Analysis: Service Level Performance by Category
 
 ### **Step 1: Data Foundation and Business Context**
